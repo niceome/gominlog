@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시글 상세</title>
+</head>
+<body>
+<h1>게시글 상세</h1>
+
+<p><strong>ID:</strong> <span th:text="${post.id}"></span></p>
+<p><strong>제목:</strong> <span th:text="${post.title}"></span></p>
+<p><strong>내용:</strong></p>
+<p th:text="${post.content}"></p>
+
+<p>
+    <strong>이미지:</strong><br/>
+    <img th:if="${post.imagePath != null}" th:src="@{'/uploads/' + ${post.imagePath}}" alt="이미지" width="300"/>
+</p>
+
+<p><a th:href="@{/post/list}">목록으로</a></p>
+</body>
+</html>

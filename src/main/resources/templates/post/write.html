@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>게시글 작성</title>
+</head>
+<body>
+<h1>게시글 작성</h1>
+
+<form th:action="@{/post/write}" method="post" enctype="multipart/form-data" th:object="${post}">
+  <p>제목: <input type="text" th:field="*{title}" /></p>
+  <p>내용: <textarea th:field="*{content}" rows="5" cols="30"></textarea></p>
+  <p>이미지: <input type="file" name="file" /></p>
+  <button type="submit">등록</button>
+</form>
+
+<p><a th:href="@{/post/list}">목록으로</a></p>
+</body>
+</html>

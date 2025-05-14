@@ -39,6 +39,7 @@ public class UserController {
 
     @GetMapping("/login")
     public String loginForm() {
-        return "user/login";  // 또는 그냥 "login" 도 가능
+        return "user/login";
     }
+
 }
