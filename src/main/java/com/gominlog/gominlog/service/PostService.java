@@ -31,6 +31,7 @@ public class PostService {
     }
 
     public Post findById(Long id) {
-        return postRepository.findById(id).orElse(null);
+        return postRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
     }
 }

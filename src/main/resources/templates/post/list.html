@@ -11,14 +11,16 @@
     <tr>
         <th>ID</th>
         <th>제목</th>
+        <th>글쓴이</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="post : ${posts}">
         <td th:text="${post.id}"></td>
         <td>
-            <a th:href="@{'/post/detail/' + ${post.id}}" th:text="${post.title}"></a>
+            <a th:href="@{'/post/' + ${post.id}}" th:text="${post.title}"></a>
         </td>
+        <td th:text="${post.author}"></td>
     </tr>
     </tbody>
 </table>

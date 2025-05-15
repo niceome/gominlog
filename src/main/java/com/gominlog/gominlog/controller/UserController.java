@@ -34,9 +34,7 @@ public class UserController {
 
         userService.join(userDto);
         return "redirect:/user/login";
-
     }
-
     @GetMapping("/login")
     public String loginForm() {
         return "user/login";

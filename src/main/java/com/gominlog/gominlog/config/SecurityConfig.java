@@ -26,16 +26,16 @@ public class SecurityConfig {
                 )
                 .formLogin((form) -> form
                         .loginPage("/user/login")
-                        .loginProcessingUrl("/user/login") // 폼 제출 경로 명시
+                        .loginProcessingUrl("/user/login")
                         .usernameParameter("username")
                         .passwordParameter("password")
                         .successHandler((request, response, authentication) -> {
-                            System.out.println("✅ 로그인 성공! 유저: " + authentication.getName());
+                            System.out.println("로그인 성공! 유저: " + authentication.getName());
                             response.sendRedirect("/post/list");
                         })
                         .permitAll()
                 )
-                .userDetailsService(customUserDetailsService) // 👉 꼭 명시
+                .userDetailsService(customUserDetailsService)
                 .logout((logout) -> logout
                         .logoutSuccessUrl("/user/login?logout")
                         .permitAll()
