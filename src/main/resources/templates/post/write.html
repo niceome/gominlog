@@ -12,6 +12,10 @@
   <p>이미지: <input type="file" name="file" /></p>
   <button type="submit">등록</button>
 </form>
+<form th:action="@{/api/files/upload}" method="post" enctype="multipart/form-data">
+  <input type="file" name="file"/>
+  <button type="submit">업로드</button>
+</form>
 
 <p><a th:href="@{/post/list}">목록으로</a></p>
 </body>

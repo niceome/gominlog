@@ -21,5 +21,5 @@ public class Post {
     @Lob
     private String content;
     private String author;
-    private String imagePath;
+    private String filePath;
 }
